@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "baidu-baike": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${PLUGIN_ROOT}/server",
+        "python",
+        "-m",
+        "baidu_baike_mcp"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUTF8": "1"
+      }
+    }
+  }
+}

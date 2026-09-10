@@ -1,0 +1,22 @@
+{
+  "name": "baike_search",
+  "description": "Search Baidu Baike (百度百科) for lemmas matching a query keyword or phrase. Returns matching lemma titles, lemma IDs, brief descriptions, and entry URLs.",
+  "parameters": {
+    "properties": {
+      "query": {
+        "title": "Query",
+        "type": "string"
+      },
+      "limit": {
+        "default": 5,
+        "title": "Limit",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "query"
+    ],
+    "title": "baike_searchArguments",
+    "type": "object"
+  }
+}

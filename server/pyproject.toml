@@ -1,0 +1,30 @@
+[project]
+name = "baidu-baike-mcp"
+version = "0.1.0"
+description = "Fast, reliable, login-free Baidu Baike (百度百科) MCP Server."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = [
+    "beautifulsoup4>=4.12.0",
+    "curl-cffi>=0.7.0",
+    "lxml>=5.0.0",
+    "mcp>=1.2.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.5.0",
+]
+
+[project.scripts]
+baidu-baike-mcp = "baidu_baike_mcp.__main__:main"
+
+[build-system]
+requires = ["hatchling>=1.20.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/baidu_baike_mcp"]
