@@ -26,6 +26,6 @@
   "logo": "assets/logo.svg",
   "skills": "./skills/",
   "mcpServers": "./mcp.json",
-  "repository": "https://github.com/nishantdsharmaharvard/baidu-baike",
-  "homepage": "https://github.com/nishantdsharmaharvard/baidu-baike"
+  "repository": "https://github.com/NishantDilipSharma/baidu-baike",
+  "homepage": "https://github.com/NishantDilipSharma/baidu-baike"
 }

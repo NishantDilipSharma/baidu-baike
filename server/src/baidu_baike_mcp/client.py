@@ -47,7 +47,7 @@ MOBILE_HEADERS = {
 }
 
 WIKI_HEADERS = {
-    "User-Agent": "BaiduBaikeMCP/0.1.0 (https://github.com/nishantdsharmaharvard/baidu-baike; nishantdsharmaharvard@gmail.com)",
+    "User-Agent": "BaiduBaikeMCP/0.1.0 (https://github.com/NishantDilipSharma/baidu-baike; nishantdsharmaharvard@gmail.com)",
     "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
 }
 

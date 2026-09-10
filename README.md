@@ -21,12 +21,12 @@ Chinese text is returned UTF-8 verbatim.
 
 ## Author
 
-**Nishant Dilip Sharma** · GitHub: [nishantdsharmaharvard](https://github.com/nishantdsharmaharvard)
+**Nishant Dilip Sharma** · GitHub: [NishantDilipSharma](https://github.com/NishantDilipSharma)
 
 ## 1. Install the server (once)
 
 ```bash
-git clone https://github.com/nishantdsharmaharvard/baidu-baike.git
+git clone https://github.com/NishantDilipSharma/baidu-baike.git
 cd baidu-baike/server
 uv sync
 ```
