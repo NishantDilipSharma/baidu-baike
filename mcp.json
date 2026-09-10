@@ -5,7 +5,7 @@
       "args": [
         "run",
         "--directory",
-        "${PLUGIN_ROOT}/server",
+        "server",
         "python",
         "-m",
         "baidu_baike_mcp"

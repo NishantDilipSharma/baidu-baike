@@ -60,7 +60,7 @@ docker run -i --rm baidu-baike-mcp
 
 ## 3. Client Configuration Snippets
 
-### Claude Desktop / Claude Code / Cursor
+### Any MCP-compatible app
 
 ```json
 {

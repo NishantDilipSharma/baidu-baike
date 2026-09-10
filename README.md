@@ -1,37 +1,26 @@
 # Baidu Baike MCP (百度百科)
 
-**Model Context Protocol (MCP) server** that lets any AI agent search and read [Baidu Baike](https://baike.baidu.com) — China’s largest Chinese-language encyclopedia — **without login or API keys**.
+**Model Context Protocol (MCP) server** for searching and reading [Baidu Baike](https://baike.baidu.com) — China’s largest Chinese-language encyclopedia.
 
-Works with Cursor, Claude Desktop, Claude Code, ChatGPT (MCP-compatible clients), and other agents that speak MCP over stdio.
+Works with **any MCP-compatible app** (Claude Desktop, Claude Code, ChatGPT MCP clients, custom agents, IDEs, and more) over stdio. **No login. No API key.**
 
-## Why this exists
+## Capabilities
 
-Generic web search is weak for Chinese encyclopedia facts, lemma disambiguation, and structured Baike pages. This MCP gives agents first-class tools for:
+| Tool | What it does |
+|------|----------------|
+| `baike_search` | Search lemmas; returns titles, lemma IDs, short blurbs, and URLs |
+| `get_baike_entry` | Fetch a structured entry (summary, infobox, catalog, body) by lemma name, lemma ID, or Baike URL |
 
-- **Chinese encyclopedia lookup** (百度百科 / Baidu Baike)
-- **Lemma search & disambiguation** (同名条目)
-- **Structured entries**: summary, infobox, catalog, article body
-- **Cloud-resilient fetching** when datacenter IPs hit Baidu WAF
+**Resilience:** Baidu Baike desktop HTML → Baidu OpenAPI → Chinese Wikipedia (`zh.wikipedia.org`), with source noted when a fallback is used.
 
-## Capabilities (MCP tools)
+**Language:** Chinese text is returned as UTF-8 verbatim.
 
-| Tool | Capability |
-|------|------------|
-| `baike_search` | Search Baike lemmas; returns titles, lemma IDs, short blurbs, and URLs |
-| `get_baike_entry` | Fetch a full structured entry by lemma name, lemma ID, or Baike URL |
+## Requirements
 
-**Resilience chain:** Baidu Baike desktop HTML → Baidu OpenAPI → Chinese Wikipedia (`zh.wikipedia.org`), with source noted in responses.
+- [uv](https://github.com/astral-sh/uv) (recommended) or Python 3.12+
+- Network access to Baidu (and optionally Wikipedia)
 
-**Language:** Returns Chinese text as UTF-8 verbatim (no script “fixes”).
-
-## Quick start
-
-### Requirements
-
-- [uv](https://github.com/astral-sh/uv)
-- Python 3.12+
-
-### Run the MCP server
+## Install & run
 
 ```bash
 cd server
@@ -39,29 +28,57 @@ uv sync
 uv run python -m baidu_baike_mcp
 ```
 
-Point your MCP client at that stdio command (see `mcp.json` / `.mcp.json` in this repo for example configs).
-
-### Cursor plugin (optional)
-
-This repo also ships as a Cursor / agent plugin layout:
+Or with pip:
 
 ```bash
-mkdir -p ~/.cursor/plugins/local
-ln -s "$(pwd)" ~/.cursor/plugins/local/baidu-baike
-# Reload the editor, then enable the plugin
+cd server
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .
+python -m baidu_baike_mcp
 ```
 
-Marketplace: publish this folder via [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish).
+Docker:
 
-## Example agent workflow
+```bash
+cd server
+docker build -t baidu-baike-mcp .
+docker run -i --rm baidu-baike-mcp
+```
 
-1. Call `baike_search` to disambiguate multi-sense Chinese titles  
-2. Call `get_baike_entry` with the chosen lemma (and `lemma_id` when available)  
+## Add to any MCP client
+
+Use a standard MCP server config (path adjusted to your checkout):
+
+```json
+{
+  "mcpServers": {
+    "baidu-baike": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "/absolute/path/to/baidu-baike/server",
+        "python",
+        "-m",
+        "baidu_baike_mcp"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUTF8": "1"
+      }
+    }
+  }
+}
+```
+
+See `mcp.json` in this repo and `server/AGENT_SETUP.md` for cloud/proxy notes.
+
+## Suggested agent workflow
+
+1. `baike_search` to disambiguate multi-sense titles  
+2. `get_baike_entry` with the chosen lemma (and `lemma_id` when available)  
 3. Quote Chinese content verbatim; keep fallback source attribution if present  
-
-## Keywords / topics
-
-`mcp` · `model-context-protocol` · `baidu-baike` · `百度百科` · `chinese-encyclopedia` · `ai-agent` · `llm-tools` · `claude` · `cursor` · `research`
 
 ## License
 

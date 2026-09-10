@@ -1,7 +1,6 @@
 {
-  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "baidu-baike",
-  "description": "MCP server for Baidu Baike (百度百科): login-free Chinese encyclopedia search and structured entries for any AI agent. Tools: baike_search, get_baike_entry. Fallbacks via Baidu OpenAPI and Chinese Wikipedia.",
+  "description": "Generic MCP server for Baidu Baike (百度百科): login-free Chinese encyclopedia search and structured entries for any MCP-compatible app. Tools: baike_search, get_baike_entry.",
   "version": "0.1.0",
   "author": {
     "name": "Nishant Sharma"
@@ -17,8 +16,6 @@
     "ai-agent",
     "llm",
     "research",
-    "claude",
-    "cursor",
     "wikipedia"
   ]
 }
