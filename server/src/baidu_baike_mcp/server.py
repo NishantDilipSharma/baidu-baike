@@ -113,7 +113,7 @@ def create_server():
             name="baidu-baike",
             title="Baidu Baike MCP",
             description="Login-free search and structured entry retrieval from Baidu Baike (百度百科) with cloud-resilient fallbacks.",
-            version="0.2.0",
+            version="0.1.0",
         )
 
         @server.tool(
