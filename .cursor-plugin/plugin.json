@@ -3,11 +3,25 @@
   "displayName": "Baidu Baike MCP",
   "version": "0.1.0",
   "description": "Generic MCP server for Baidu Baike (百度百科): login-free Chinese encyclopedia search and structured entries for any MCP-compatible app. Tools: baike_search, get_baike_entry.",
-  "author": { "name": "Nishant Sharma" },
+  "author": {
+    "name": "Nishant Dilip Sharma"
+  },
   "license": "MIT",
-  "keywords": ["mcp", "baidu", "baike", "encyclopedia", "chinese", "research"],
+  "keywords": [
+    "mcp",
+    "baidu",
+    "baike",
+    "encyclopedia",
+    "chinese",
+    "research"
+  ],
   "category": "integrations",
-  "tags": ["baidu-baike", "encyclopedia", "mcp", "research"],
+  "tags": [
+    "baidu-baike",
+    "encyclopedia",
+    "mcp",
+    "research"
+  ],
   "logo": "assets/logo.svg",
   "skills": "./skills/",
   "mcpServers": "./mcp.json"

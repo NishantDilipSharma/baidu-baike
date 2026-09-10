@@ -1,10 +1,11 @@
 [project]
 name = "baidu-baike-mcp"
 version = "0.1.0"
-description = "Fast, reliable, login-free Baidu Baike (百度百科) MCP Server."
+description = "Generic MCP server by Nishant Dilip Sharma for Baidu Baike (百度百科): login-free Chinese encyclopedia search and structured entries for any MCP-compatible app."
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
+authors = [{ name = "Nishant Dilip Sharma" }]
 dependencies = [
     "beautifulsoup4>=4.12.0",
     "curl-cffi>=0.7.0",

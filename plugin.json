@@ -3,7 +3,7 @@
   "description": "Generic MCP server for Baidu Baike (百度百科) for any MCP-compatible app. Tools: baike_search, get_baike_entry.",
   "version": "0.1.0",
   "author": {
-    "name": "Nishant Sharma"
+    "name": "Nishant Dilip Sharma"
   },
   "keywords": [
     "mcp",
