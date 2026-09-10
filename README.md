@@ -1,54 +1,40 @@
 # Baidu Baike MCP (百度百科)
 
-**Model Context Protocol (MCP) server** for searching and reading [Baidu Baike](https://baike.baidu.com) — China’s largest Chinese-language encyclopedia.
+**Generic [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server** for searching and reading [Baidu Baike](https://baike.baidu.com).
 
-Works with **any MCP-compatible app** (Claude Desktop, Claude Code, ChatGPT MCP clients, custom agents, IDEs, and more) over stdio. **No login. No API key.**
+One server. **Any MCP-compatible app** — Claude Desktop, Claude Code, Cursor, Codex, ChatGPT MCP clients, custom agents, and more.
+
+- No login  
+- No API key  
+- Stdio MCP  
 
 ## Capabilities
 
 | Tool | What it does |
 |------|----------------|
-| `baike_search` | Search lemmas; returns titles, lemma IDs, short blurbs, and URLs |
-| `get_baike_entry` | Fetch a structured entry (summary, infobox, catalog, body) by lemma name, lemma ID, or Baike URL |
+| `baike_search` | Search lemmas; titles, lemma IDs, blurbs, URLs |
+| `get_baike_entry` | Structured entry (summary, infobox, catalog, body) by lemma, ID, or Baike URL |
 
-**Resilience:** Baidu Baike desktop HTML → Baidu OpenAPI → Chinese Wikipedia (`zh.wikipedia.org`), with source noted when a fallback is used.
+**Fallbacks when cloud IPs hit Baidu WAF:** Baike desktop → Baidu OpenAPI → Chinese Wikipedia (`zh.wikipedia.org`).
 
-**Language:** Chinese text is returned as UTF-8 verbatim.
+Chinese text is returned UTF-8 verbatim.
 
-## Requirements
-
-- [uv](https://github.com/astral-sh/uv) (recommended) or Python 3.12+
-- Network access to Baidu (and optionally Wikipedia)
-
-## Install & run
+## Install the server (once)
 
 ```bash
 cd server
 uv sync
-uv run python -m baidu_baike_mcp
 ```
 
-Or with pip:
+Requirements: [uv](https://github.com/astral-sh/uv) or Python 3.12+.
 
-```bash
-cd server
-python -m venv .venv
-source .venv/bin/activate
-pip install -e .
-python -m baidu_baike_mcp
-```
+## Add it to your app (same MCP, different config file)
 
-Docker:
+Every app just needs to start this process over stdio. Copy the idea below and point `--directory` at **your** checkout’s `server/` folder.
 
-```bash
-cd server
-docker build -t baidu-baike-mcp .
-docker run -i --rm baidu-baike-mcp
-```
+### Generic MCP config
 
-## Add to any MCP client
-
-Use a standard MCP server config (path adjusted to your checkout):
+Use `mcp.stdio.example.json` as a template:
 
 ```json
 {
@@ -72,13 +58,39 @@ Use a standard MCP server config (path adjusted to your checkout):
 }
 ```
 
-See `mcp.json` in this repo and `server/AGENT_SETUP.md` for cloud/proxy notes.
+### Claude Desktop
+
+Edit Claude’s MCP config (Claude Desktop → Settings → Developer → Edit Config) and merge the `mcpServers.baidu-baike` block above.
+
+### Claude Code / other CLI agents
+
+Register the same stdio server in that tool’s MCP settings (same `command` / `args` / `env`).
+
+### Cursor
+
+Cursor can use the **same** MCP server entry. This repo also includes optional plugin metadata (`.cursor-plugin/`, `plugin.json`, `mcp.json`) so plugin loaders can discover it — still the same generic MCP underneath.
+
+### Codex / ChatGPT / other MCP hosts
+
+Add a custom MCP server with the same stdio command. If the host UI only asks for “command” and “args”, paste the `uv run …` values from the generic config.
+
+### Docker (any host that can run a container over stdio)
+
+```bash
+cd server
+docker build -t baidu-baike-mcp .
+docker run -i --rm baidu-baike-mcp
+```
+
+Point the app’s MCP config at that Docker command instead of `uv` if you prefer.
+
+More cloud/proxy detail: `server/AGENT_SETUP.md`.
 
 ## Suggested agent workflow
 
-1. `baike_search` to disambiguate multi-sense titles  
-2. `get_baike_entry` with the chosen lemma (and `lemma_id` when available)  
-3. Quote Chinese content verbatim; keep fallback source attribution if present  
+1. `baike_search` to disambiguate  
+2. `get_baike_entry` with lemma + `lemma_id` when you have it  
+3. Quote Chinese verbatim; keep fallback source notes  
 
 ## License
 
