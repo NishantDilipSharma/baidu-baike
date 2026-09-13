@@ -2,6 +2,8 @@
 
 **Baidu Baike MCP** by **Nishant Dilip Sharma** (`NishantDilipSharma/baidu-baike`) — login-free Chinese encyclopedia search & structured entries for any MCP app.
 
+> **Unofficial community project.** Not affiliated with, endorsed by, or operated by Baidu, Inc. Covers **Baidu Baike** (百科 encyclopedia) only — not Baidu web search.
+
 **Generic [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server** by **Nishant Dilip Sharma** for searching and reading [Baidu Baike](https://baike.baidu.com).
 
 One server for **any MCP-compatible app** — Claude Desktop, Claude Code, Cursor, Codex, ChatGPT MCP clients, custom agents, and more.

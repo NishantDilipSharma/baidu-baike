@@ -1,5 +1,7 @@
 # Baidu Baike MCP Server (百度百科) - Cloud-Resilient Edition
 
+> **Unofficial community project.** Not affiliated with, endorsed by, or operated by Baidu, Inc. Covers **Baidu Baike** (百科 encyclopedia) only — not Baidu web search.
+
 > Login-free Baidu Baike (百度百科) MCP — search + structured encyclopedia entries for any MCP app. `pip install baidu-baike-mcp`
 
 A fast, reliable, login-free Model Context Protocol (MCP) server for searching and retrieving structured knowledge from Baidu Baike (百度百科), specifically engineered to handle cloud datacenter IP blocks.
