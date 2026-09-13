@@ -20,6 +20,14 @@ try:
     USE_MCPSERVER = True
 except ImportError:
     from mcp.server.fastmcp import FastMCP  # type: ignore[no-redef]
+    from mcp.types import ToolAnnotations  # type: ignore[no-redef]
+
+    READ_ONLY = ToolAnnotations(
+        readOnlyHint=True,
+        destructiveHint=False,
+        idempotentHint=True,
+        openWorldHint=True,
+    )
     USE_MCPSERVER = False
 
 from baidu_baike_mcp.client import BaiduBaikeClient
@@ -151,12 +159,12 @@ def create_server():
     else:
         mcp = FastMCP("baidu-baike")
 
-        @mcp.tool()
+        @mcp.tool(annotations=READ_ONLY)
         async def baike_search(query: str, limit: int = 5) -> str:
             """Search Baidu Baike for lemmas matching a query keyword or phrase."""
             return await do_baike_search(query, limit)
 
-        @mcp.tool()
+        @mcp.tool(annotations=READ_ONLY)
         async def get_baike_entry(
             lemma: str,
             lemma_id: Optional[int] = None,
