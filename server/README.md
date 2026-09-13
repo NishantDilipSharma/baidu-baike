@@ -39,3 +39,5 @@ source .venv/bin/activate
 pip install -e .
 python -m baidu_baike_mcp
 ```
+
+<!-- mcp-name: io.github.NishantDilipSharma/baidu-baike -->

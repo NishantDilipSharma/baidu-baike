@@ -16,7 +16,23 @@
       "version": "0.1.0",
       "transport": {
         "type": "stdio"
-      }
+      },
+      "environmentVariables": [
+        {
+          "name": "PYTHONIOENCODING",
+          "description": "Set to utf-8 for correct Chinese text",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false
+        },
+        {
+          "name": "PYTHONUTF8",
+          "description": "Set to 1 for UTF-8 mode",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false
+        }
+      ]
     }
   ]
 }
