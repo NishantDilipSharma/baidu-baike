@@ -1,6 +1,6 @@
 # Baidu Baike MCP (百度百科)
 
-**Baidu Baike MCP server by Nishant Dilip Sharma** — GitHub: [NishantDilipSharma/baidu-baike](https://github.com/NishantDilipSharma/baidu-baike).
+**Baidu Baike MCP** by **Nishant Dilip Sharma** (`NishantDilipSharma/baidu-baike`) — login-free Chinese encyclopedia search & structured entries for any MCP app.
 
 **Generic [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server** by **Nishant Dilip Sharma** for searching and reading [Baidu Baike](https://baike.baidu.com).
 
@@ -20,6 +20,8 @@ One server for **any MCP-compatible app** — Claude Desktop, Claude Code, Curso
 **Fallbacks when cloud IPs hit Baidu WAF:** Baike desktop → Baidu OpenAPI → Chinese Wikipedia (`zh.wikipedia.org`).
 
 Chinese text is returned UTF-8 verbatim.
+
+<!-- mcp-name: io.github.NishantDilipSharma/baidu-baike -->
 
 ## Author
 

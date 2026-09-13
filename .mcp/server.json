@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.NishantDilipSharma/baidu-baike",
+  "title": "Baidu Baike MCP",
+  "description": "Baidu Baike MCP by Nishant Dilip Sharma — login-free Chinese encyclopedia search for any MCP app.",
+  "version": "0.1.0",
+  "websiteUrl": "https://github.com/NishantDilipSharma/baidu-baike",
+  "repository": {
+    "url": "https://github.com/NishantDilipSharma/baidu-baike",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "baidu-baike-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
