@@ -1,5 +1,7 @@
 # Baidu Baike MCP (百度百科)
 
+**Baidu Baike MCP server by Nishant Dilip Sharma** — GitHub: [NishantDilipSharma/baidu-baike](https://github.com/NishantDilipSharma/baidu-baike).
+
 **Generic [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server** by **Nishant Dilip Sharma** for searching and reading [Baidu Baike](https://baike.baidu.com).
 
 One server for **any MCP-compatible app** — Claude Desktop, Claude Code, Cursor, Codex, ChatGPT MCP clients, custom agents, and more.
