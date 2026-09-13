@@ -1,5 +1,7 @@
 # Baidu Baike MCP Server (百度百科) - Cloud-Resilient Edition
 
+> Login-free Baidu Baike (百度百科) MCP — search + structured encyclopedia entries for any MCP app. `pip install baidu-baike-mcp`
+
 A fast, reliable, login-free Model Context Protocol (MCP) server for searching and retrieving structured knowledge from Baidu Baike (百度百科), specifically engineered to handle cloud datacenter IP blocks.
 
 ## Key Features & Cloud Resilience
@@ -23,7 +25,11 @@ A fast, reliable, login-free Model Context Protocol (MCP) server for searching a
 ## Installation & Running
 
 ```bash
-# With uv (recommended)
+# From PyPI
+pip install baidu-baike-mcp
+baidu-baike-mcp
+
+# From this repo with uv (recommended for development)
 uv sync
 uv run python -m baidu_baike_mcp
 

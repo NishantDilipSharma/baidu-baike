@@ -25,6 +25,17 @@ Chinese text is returned UTF-8 verbatim.
 
 **Nishant Dilip Sharma** · GitHub: [NishantDilipSharma](https://github.com/NishantDilipSharma)
 
+
+## Install from PyPI
+
+```bash
+pip install baidu-baike-mcp
+# or
+uvx --from baidu-baike-mcp baidu-baike-mcp
+```
+
+Then point your MCP client at the `baidu-baike-mcp` console script (or `python -m baidu_baike_mcp`).
+
 ## 1. Install the server (once)
 
 ```bash

@@ -6,12 +6,29 @@ readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
 authors = [{ name = "Nishant Dilip Sharma", email = "nishantdsharmaharvard@gmail.com" }]
+keywords = ["mcp", "baidu", "baike", "encyclopedia", "chinese", "llm", "ai-agent"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
 dependencies = [
     "beautifulsoup4>=4.12.0",
     "curl-cffi>=0.7.0",
     "lxml>=5.0.0",
     "mcp>=1.2.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/NishantDilipSharma/baidu-baike"
+Repository = "https://github.com/NishantDilipSharma/baidu-baike"
+Issues = "https://github.com/NishantDilipSharma/baidu-baike/issues"
+Documentation = "https://github.com/NishantDilipSharma/baidu-baike#readme"
 
 [dependency-groups]
 dev = [
