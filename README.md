@@ -11,6 +11,7 @@
 
 [![mcpservers.org](https://img.shields.io/badge/Awesome%20MCP%20Servers-listed-blue)](https://mcpservers.org/servers/nishantdilipsharma/baidu-baike)
 [![Smithery](https://img.shields.io/badge/Smithery-listed-black)](https://smithery.ai/servers/nishantdsharmaharvard/baidu-baike)
+[![M8ven Score](https://m8ven.ai/badge/mcp/nishantdilipsharma/baidu-baike)](https://m8ven.ai/mcp/nishantdilipsharma/baidu-baike)
 
 
 **Generic [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server** by **Nishant Dilip Sharma** for searching and reading [Baidu Baike](https://baike.baidu.com).
