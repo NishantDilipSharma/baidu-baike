@@ -4,6 +4,15 @@
 
 > **Unofficial community project.** Not affiliated with, endorsed by, or operated by Baidu, Inc. Covers **Baidu Baike** (百科 encyclopedia) only — not Baidu web search.
 
+
+<a href="https://glama.ai/mcp/servers/@NishantDilipSharma/baidu-baike">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@NishantDilipSharma/baidu-baike/badge" alt="Baidu Baike MCP server" />
+</a>
+
+[![mcpservers.org](https://img.shields.io/badge/Awesome%20MCP%20Servers-listed-blue)](https://mcpservers.org/servers/nishantdilipsharma/baidu-baike)
+[![Smithery](https://img.shields.io/badge/Smithery-listed-black)](https://smithery.ai/servers/nishantdsharmaharvard/baidu-baike)
+
+
 **Generic [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server** by **Nishant Dilip Sharma** for searching and reading [Baidu Baike](https://baike.baidu.com).
 
 One server for **any MCP-compatible app** — Claude Desktop, Claude Code, Cursor, Codex, ChatGPT MCP clients, custom agents, and more.
